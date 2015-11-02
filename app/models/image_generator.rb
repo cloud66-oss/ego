@@ -12,7 +12,7 @@ class ImageGenerator
 
 		txt = Magick::Draw.new
 		txt.gravity = Magick::CenterGravity
-		txt.pointsize = (3.0 / 5.0) * size
+		txt.pointsize = (1.0 / 2.0) * size
 		txt.fill = 'white'
 		txt.font = 'Helvetica New'
 		image.annotate(txt, 0, 0, 0, 0, letters)
