@@ -6,10 +6,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
 
-RUN apt-add-repository ppa:anton+/photo-video-apps 
 RUN apt-get update -y 
-RUN apt-get install -y imagemagick libmagickwand-dev nodejs mysql-client postgresql-client sqlite3 --no-install-recommends
-RUN apt-get install --reinstall ghostscript
+RUN apt-get install -y imagemagick libmagickwand-dev nodejs --no-install-recommends
+RUN apt-get install -y ghostscript --no-install-recommends
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/app
