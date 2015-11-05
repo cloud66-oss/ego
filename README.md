@@ -1,12 +1,10 @@
-== README
-
 This is a simple rails app to return an image generated from two letters.
 
-### Build and run with docker
+#### Build and run with docker
 
-*docker build --t ego .*
-*docker run -d ego*
+`docker build --t ego .`
+`docker run -d ego`
 
-### Request and image
+#### Request and image
 
-*curl <host>/generate/ab/size/123*
+`curl <host>/generate/ab/size/123`
