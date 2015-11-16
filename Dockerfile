@@ -7,8 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN bundle config --global frozen 1
 
 RUN apt-get update -y 
-RUN apt-get install -y imagemagick libmagickwand-dev nodejs --no-install-recommends
-RUN apt-get install -y ghostscript --no-install-recommends
+RUN apt-get install -y imagemagick libmagickwand-dev nodejs build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev autoconf libc6-dev ncurses-dev automake libtool ghostscript --no-install-recommends
 RUN rm -rf /var/lib/apt/lists/*
 
 RUN mkdir -p /usr/src/app
