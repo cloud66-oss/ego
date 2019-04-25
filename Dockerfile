@@ -13,7 +13,7 @@ RUN apt-get update -y \
 && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
 && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \ 
 && apt-get update -y \ 
-&& apt-get install -y yarn nodejs \ 
+&& apt-get install -y yarn nodejs ttf-liberation \
 && rm -rf /var/lib/apt/lists/* 
 
 RUN mkdir -p /usr/src/app

@@ -1,9 +1,9 @@
-require 'RMagick'
+require 'rmagick'
 
 class ImageGenerator
 	include Magick
 
-	def generate(letters, size: 100)
+		def generate(letters, size: 100)
 		path = "/cache/#{letters}_#{size}.png"
 		if File.exists?(path)
 			image = Image.read(path).first
@@ -18,7 +18,8 @@ class ImageGenerator
 			txt.gravity = Magick::CenterGravity
 			txt.pointsize = (1.0 / 2.0) * size
 			txt.fill = 'white'
-			txt.font = 'Helvetica New'
+			# this is now the font location
+			txt.font = '/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf'
 
 			adjustment_x = -4.0/(200.0/size.to_f)
 			adjustment_y = 12.0/(200.0/size.to_f)
