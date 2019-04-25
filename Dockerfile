@@ -1,4 +1,4 @@
-FROM ruby:2.2
+FROM ruby:2.6.3-stretch
 
 # This prevents us from get errors during apt-get installs as it notifies the environment that it is a non-interactive one.
 ENV DEBIAN_FRONTEND noninteractive
