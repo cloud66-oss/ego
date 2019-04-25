@@ -21,10 +21,9 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN bundle install
-RUN bundle exec rails webpacker:install
-RUN yarn install --check-files
-
+RUN bundle install \
+&& yarn install --check-files \
+&& bundle exec rails webpacker:install 
 
 COPY . /usr/src/app
 
