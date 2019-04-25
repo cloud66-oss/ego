@@ -22,11 +22,9 @@ WORKDIR /usr/src/app
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 RUN bundle install 
-&& bundle exec rails webpacker:install \\
-&& bundle exec yarn install --check-files
-
 
 COPY . /usr/src/app
+
 RUN bundle exec yarn install --check-files \
 && bundle exec rails webpacker:install
 
