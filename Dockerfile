@@ -21,11 +21,14 @@ WORKDIR /usr/src/app
 
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
-RUN bundle install \
-&& yarn install --check-files \
-&& bundle exec rails webpacker:install 
+RUN bundle install 
+&& bundle exec rails webpacker:install \\
+&& bundle exec yarn install --check-files
+
 
 COPY . /usr/src/app
+RUN bundle exec yarn install --check-files \
+&& bundle exec rails webpacker:install
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
