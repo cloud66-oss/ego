@@ -1,24 +1,19 @@
-# README
+<img src="http://cdn2-cloud66-com.s3.amazonaws.com/images/oss-sponsorship.png" width=150/>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ego
 
-Things you may want to cover:
+Ego is a simple Rails based web application that transforms an input of one-two letters into a square image showing those letters.
+This is primarily used as an image source for a gravitar-missing fallback.
 
-* Ruby version
+### Usage
 
-* System dependencies
+Start the webserver:
+```
+export CACHE_PATH=/tmp/cache
+bundle exec rails s -b 0.0.0.0
+```
+Then from your browser, navigate to:
 
-* Configuration
+`http://localhost:3000/generate/ab/size/30`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You will then see a simple un-styled image of the initials `AB`
