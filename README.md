@@ -17,3 +17,14 @@ Then from your browser, navigate to:
 `http://localhost:3000/generate/ab/size/30`
 
 You will then see a simple un-styled image of the initials `AB`
+
+#### ImageMagick Dependency
+
+Note that this requires `ImageMagick` libraries to run (as it uses `ImageMagick` to generate the image)
+
+On OSX you can use homebrew to install ImageMagick with the command:
+```
+brew install imagemagick@6
+```  
+
+The Dockerfile in this project defines the dependency installations for running in a container.
